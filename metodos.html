@@ -1,62 +1,370 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <title>Métodos en Java</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Métodos en Java</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f4f7fc;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+nav{
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+margin:0 15px;
+}
+
+.contenedor{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.seccion{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e40af;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+pre{
+background:#1e293b;
+color:white;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+margin:15px 0;
+}
+
+ul{
+margin-left:25px;
+line-height:1.8;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Métodos en Java</h1>
+<header>
+
+<h1>⚙️ Métodos en Java</h1>
 
 <p>
-Un método es un bloque de código que realiza una tarea específica. Su principal ventaja es evitar repetir código.
+Aprende a crear bloques de código reutilizables para desarrollar programas más organizados y fáciles de mantener.
 </p>
 
-<h2>Ejemplo de método</h2>
+</header>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+<a href="ciclos.html">Ciclos</a>
+<a href="vectores.html">Vectores y Matrices</a>
+<a href="listas.html">Listas</a>
+<a href="archivos.html">Archivos</a>
+
+</nav>
+
+<div class="contenedor">
+
+<div class="seccion">
+
+<h2>¿Qué es un método?</h2>
+
+<p>
+Un método es un conjunto de instrucciones agrupadas bajo un nombre específico para realizar una tarea determinada.
+</p>
+
+<p>
+Los métodos permiten reutilizar código, mejorar la organización del programa y facilitar el mantenimiento de aplicaciones grandes.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>¿Para qué sirven los métodos?</h2>
+
+<ul>
+
+<li>Evitan repetir código.</li>
+
+<li>Facilitan la lectura de programas.</li>
+
+<li>Permiten dividir problemas complejos en tareas pequeñas.</li>
+
+<li>Mejoran la reutilización del código.</li>
+
+<li>Hacen que los programas sean más fáciles de mantener.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Estructura General de un Método</h2>
 
 <pre>
-public class Metodos {
+public static void saludar(){
 
-    public static void saludar() {
-        System.out.println("Hola, bienvenido a Java");
+    System.out.println("Hola");
+
+}
+</pre>
+
+<h2>Significado de cada elemento</h2>
+
+<ul>
+
+<li><strong>public:</strong> permite acceder al método desde cualquier parte del programa.</li>
+
+<li><strong>static:</strong> permite utilizar el método sin crear un objeto.</li>
+
+<li><strong>void:</strong> indica que el método no devuelve ningún valor.</li>
+
+<li><strong>saludar:</strong> es el nombre del método.</li>
+
+<li><strong>()</strong> contiene los parámetros que puede recibir.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Método sin Parámetros</h2>
+
+<pre>
+public class MetodoSimple {
+
+    public static void saludar(){
+
+        System.out.println("Bienvenido a Java");
+
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         saludar();
 
     }
+
+}
+</pre>
+
+<p>
+En este ejemplo el método saludar() muestra un mensaje en pantalla y es llamado desde el método principal main().
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Método con Parámetros</h2>
+
+<p>
+Los parámetros permiten enviar información al método.
+</p>
+
+<pre>
+public class MetodoParametros {
+
+    public static void saludar(String nombre){
+
+        System.out.println("Hola " + nombre);
+
+    }
+
+    public static void main(String[] args){
+
+        saludar("Carlos");
+
+    }
+
+}
+</pre>
+
+<p>
+Cuando se ejecuta el programa, el valor "Carlos" se almacena en el parámetro nombre.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Método con Valor de Retorno</h2>
+
+<p>
+Un método puede devolver información utilizando la palabra reservada return.
+</p>
+
+<pre>
+public class MetodoRetorno {
+
+    public static int sumar(int a, int b){
+
+        return a + b;
+
+    }
+
+    public static void main(String[] args){
+
+        int resultado = sumar(5,3);
+
+        System.out.println(resultado);
+
+    }
+
 }
 </pre>
 
 <h2>Explicación</h2>
 
 <ul>
-<li>public: permite acceder al método desde cualquier lugar.</li>
-<li>static: permite usar el método sin crear un objeto.</li>
-<li>void: indica que no devuelve ningún valor.</li>
-<li>saludar(): nombre del método.</li>
-<li>saludar(); ejecuta el método.</li>
+
+<li>int indica que el método devolverá un número entero.</li>
+
+<li>return devuelve el resultado.</li>
+
+<li>El valor retornado se guarda en la variable resultado.</li>
+
 </ul>
 
-<h2>Salida</h2>
+</div>
+
+<div class="seccion">
+
+<h2>Ejercicio Propuesto</h2>
+
+<p>
+Crear un método llamado multiplicar que reciba dos números y devuelva el resultado de la multiplicación.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Solución</h2>
 
 <pre>
-Hola, bienvenido a Java
-</pre>
+public class EjercicioMetodo {
 
-<h2>Método con retorno</h2>
+    public static int multiplicar(int a, int b){
 
-<pre>
-public static int sumar(int a, int b){
-    return a + b;
+        return a * b;
+
+    }
+
+    public static void main(String[] args){
+
+        System.out.println(multiplicar(4,5));
+
+    }
+
 }
 </pre>
 
 <p>
-La palabra return devuelve un resultado.
+Resultado:
 </p>
 
-<a href="index.html">Volver al inicio</a>
+<pre>
+20
+</pre>
+
+</div>
+
+<div class="seccion">
+
+<h2>Errores Comunes</h2>
+
+<ul>
+
+<li>Olvidar escribir return cuando el método debe devolver un valor.</li>
+
+<li>Llamar al método con parámetros incorrectos.</li>
+
+<li>Escribir mal el nombre del método.</li>
+
+<li>Confundir variables con métodos.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Código Fuente</h2>
+
+<p>
+Aquí debes colocar los enlaces a los archivos Java almacenados en GitHub.
+</p>
+
+<pre>
+codigo/MetodoSimple.java
+codigo/MetodoParametros.java
+codigo/MetodoRetorno.java
+</pre>
+
+</div>
+
+</div>
+
+<footer>
+
+Tutorial de Programación en Java | Métodos
+
+</footer>
 
 </body>
 </html>

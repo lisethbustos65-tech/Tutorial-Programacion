@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manejo de Archivos en Java</title>
+</head>
+<body>
+
+<h1>Manejo de Archivos en Java</h1>
+
+<p>
+El manejo de archivos permite guardar información de forma permanente en el computador.
+</p>
+
+<h2>Escribir un archivo</h2>
+
+<pre>
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class EscribirArchivo {
+
+    public static void main(String[] args) throws IOException {
+
+        FileWriter archivo = new FileWriter("datos.txt");
+
+        archivo.write("Hola Mundo");
+
+        archivo.close();
+
+    }
+}
+</pre>
+
+<h2>Explicación</h2>
+
+<ul>
+<li>FileWriter permite escribir en un archivo.</li>
+<li>write() escribe el contenido.</li>
+<li>close() guarda y cierra el archivo.</li>
+</ul>
+
+<h2>Leer un archivo</h2>
+
+<pre>
+import java.io.File;
+import java.util.Scanner;
+
+public class LeerArchivo {
+
+    public static void main(String[] args) throws Exception {
+
+        File archivo = new File("datos.txt");
+
+        Scanner lector = new Scanner(archivo);
+
+        while(lector.hasNextLine()) {
+            System.out.println(lector.nextLine());
+        }
+
+        lector.close();
+
+    }
+}
+</pre>
+
+<h2>Conceptos importantes</h2>
+
+<ul>
+<li>Scanner permite leer información.</li>
+<li>hasNextLine() verifica si quedan líneas por leer.</li>
+<li>nextLine() obtiene la siguiente línea.</li>
+</ul>
+
+<a href="index.html">Volver al inicio</a>
+
+</body>
+</html>

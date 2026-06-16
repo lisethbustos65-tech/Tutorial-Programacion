@@ -1,17 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <title>Listas en Java</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listas en Java</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f4f7fc;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+nav{
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+margin:0 15px;
+}
+
+.contenedor{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.seccion{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e40af;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+pre{
+background:#1e293b;
+color:white;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+margin:15px 0;
+}
+
+ul{
+margin-left:25px;
+line-height:1.8;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Listas (ArrayList) en Java</h1>
+<header>
+
+<h1>📋 Listas en Java (ArrayList)</h1>
 
 <p>
-Un ArrayList permite almacenar elementos dinámicamente. A diferencia de los arreglos, puede crecer o disminuir de tamaño.
+Aprende a almacenar y administrar conjuntos de datos dinámicos utilizando ArrayList.
 </p>
 
-<h2>Ejemplo</h2>
+</header>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+<a href="ciclos.html">Ciclos</a>
+<a href="metodos.html">Métodos</a>
+<a href="vectores.html">Vectores y Matrices</a>
+<a href="archivos.html">Archivos</a>
+
+</nav>
+
+<div class="contenedor">
+
+<div class="seccion">
+
+<h2>¿Qué es una lista?</h2>
+
+<p>
+Una lista es una estructura de datos que permite almacenar varios elementos. En Java se utiliza la clase ArrayList para crear listas dinámicas.
+</p>
+
+<p>
+A diferencia de los arreglos tradicionales, una lista puede aumentar o disminuir de tamaño automáticamente.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>¿Para qué sirven las listas?</h2>
+
+<ul>
+
+<li>Guardar información de forma dinámica.</li>
+
+<li>Agregar y eliminar elementos fácilmente.</li>
+
+<li>Almacenar colecciones de datos.</li>
+
+<li>Gestionar registros de usuarios, productos o estudiantes.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Crear una lista</h2>
 
 <pre>
 import java.util.ArrayList;
@@ -29,25 +168,105 @@ public class Lista {
         System.out.println(nombres);
 
     }
+
 }
 </pre>
 
 <h2>Explicación</h2>
 
 <ul>
-<li>ArrayList es una colección dinámica.</li>
+
+<li>ArrayList crea una lista dinámica.</li>
+
+<li>String indica que almacenará texto.</li>
+
 <li>add() agrega elementos.</li>
-<li>String indica que la lista almacenará texto.</li>
-<li>No es necesario definir el tamaño al crearla.</li>
+
+<li>System.out.println() muestra la lista.</li>
+
 </ul>
 
-<h2>Salida</h2>
+</div>
+
+<div class="seccion">
+
+<h2>Acceder a un elemento</h2>
 
 <pre>
-[Ana, Luis, Carlos]
+System.out.println(nombres.get(0));
 </pre>
 
-<a href="index.html">Volver al inicio</a>
+<p>
+El método get() permite acceder a un elemento mediante su posición.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Eliminar un elemento</h2>
+
+<pre>
+nombres.remove(1);
+</pre>
+
+<p>
+Elimina el elemento que se encuentra en la posición indicada.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Ejercicio Propuesto</h2>
+
+<p>
+Crear una lista de cinco ciudades y mostrar todas en pantalla.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Solución</h2>
+
+<pre>
+ArrayList<String> ciudades = new ArrayList<>();
+
+ciudades.add("Quito");
+ciudades.add("Guayaquil");
+ciudades.add("Cuenca");
+ciudades.add("Manta");
+ciudades.add("Loja");
+
+System.out.println(ciudades);
+</pre>
+
+</div>
+
+<div class="seccion">
+
+<h2>Errores Comunes</h2>
+
+<ul>
+
+<li>Olvidar importar ArrayList.</li>
+
+<li>Intentar acceder a una posición que no existe.</li>
+
+<li>Confundir arreglos con listas.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+
+Tutorial de Programación en Java | Listas
+
+</footer>
 
 </body>
 </html>

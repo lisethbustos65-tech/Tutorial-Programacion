@@ -1,20 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <title>Ciclos en Java</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciclos en Java</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f4f7fc;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+header h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+nav{
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+margin:0 15px;
+}
+
+.contenedor{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.seccion{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e40af;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+pre{
+background:#1e293b;
+color:white;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+margin:15px 0;
+}
+
+ul{
+margin-left:25px;
+line-height:1.8;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Ciclos en Java</h1>
+<header>
+
+<h1>🔁 Ciclos en Java</h1>
 
 <p>
-Los ciclos permiten repetir instrucciones varias veces sin escribir el mismo código repetidamente.
+Aprende a repetir instrucciones de manera eficiente utilizando ciclos o bucles.
 </p>
 
-<h2>Ciclo for</h2>
+</header>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+<a href="metodos.html">Métodos</a>
+<a href="vectores.html">Vectores y Matrices</a>
+<a href="listas.html">Listas</a>
+<a href="archivos.html">Archivos</a>
+
+</nav>
+
+<div class="contenedor">
+
+<div class="seccion">
+
+<h2>¿Qué es un ciclo?</h2>
 
 <p>
-El ciclo for se utiliza cuando conocemos cuántas veces queremos repetir una acción.
+Un ciclo es una estructura de control que permite ejecutar varias veces un mismo bloque de instrucciones sin necesidad de repetir el código manualmente.
+</p>
+
+<p>
+Los ciclos son fundamentales en programación porque permiten automatizar tareas repetitivas y procesar grandes cantidades de información de manera eficiente.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>¿Para qué sirven los ciclos?</h2>
+
+<ul>
+
+<li>Mostrar secuencias numéricas.</li>
+<li>Recorrer vectores y matrices.</li>
+<li>Procesar listas de datos.</li>
+<li>Automatizar tareas repetitivas.</li>
+<li>Reducir la cantidad de código.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Tipos de ciclos en Java</h2>
+
+<ul>
+
+<li>for</li>
+<li>while</li>
+<li>do-while</li>
+
+</ul>
+
+</div>
+<div class="seccion">
+
+<h2>Ciclo For</h2>
+
+<p>
+El ciclo for se utiliza cuando conocemos de antemano cuántas veces queremos repetir una acción.
 </p>
 
 <pre>
@@ -23,24 +178,43 @@ public class CicloFor {
     public static void main(String[] args) {
 
         for(int i = 1; i <= 5; i++) {
+
             System.out.println(i);
+
         }
 
     }
+
 }
 </pre>
 
-<h2>Explicación</h2>
+<h2>Explicación del código</h2>
 
-<ul>
-<li>int i = 1: inicia la variable en 1.</li>
-<li>i <= 5: el ciclo se ejecuta mientras i sea menor o igual a 5.</li>
-<li>i++: aumenta el valor de i en 1 después de cada repetición.</li>
-</ul>
+<p><strong>int i = 1</strong></p>
 
 <p>
-Salida:
+Crea una variable llamada i que inicia con el valor 1.
 </p>
+
+<p><strong>i <= 5</strong></p>
+
+<p>
+Mientras esta condición sea verdadera el ciclo seguirá ejecutándose.
+</p>
+
+<p><strong>i++</strong></p>
+
+<p>
+Incrementa el valor de i en una unidad después de cada repetición.
+</p>
+
+<p><strong>System.out.println(i)</strong></p>
+
+<p>
+Muestra el valor actual de la variable i.
+</p>
+
+<h2>Resultado</h2>
 
 <pre>
 1
@@ -50,7 +224,145 @@ Salida:
 5
 </pre>
 
-<a href="index.html">Volver al inicio</a>
+</div>
+
+<div class="seccion">
+
+<h2>Ciclo While</h2>
+
+<p>
+El ciclo while se utiliza cuando no sabemos exactamente cuántas veces se repetirá una acción.
+</p>
+
+<pre>
+public class CicloWhile {
+
+    public static void main(String[] args) {
+
+        int numero = 1;
+
+        while(numero <= 5){
+
+            System.out.println(numero);
+
+            numero++;
+
+        }
+
+    }
+
+}
+</pre>
+
+<p>
+El ciclo continuará ejecutándose mientras la condición sea verdadera.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Ciclo Do While</h2>
+
+<p>
+La diferencia principal es que el bloque de instrucciones se ejecuta al menos una vez antes de verificar la condición.
+</p>
+
+<pre>
+public class CicloDoWhile {
+
+    public static void main(String[] args) {
+
+        int numero = 1;
+
+        do{
+
+            System.out.println(numero);
+
+            numero++;
+
+        }while(numero <= 5);
+
+    }
+
+}
+</pre>
+
+</div>
+<div class="seccion">
+
+<h2>Ejercicio Propuesto</h2>
+
+<p>
+Realiza un programa que muestre los números del 1 al 10 utilizando un ciclo for.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Solución</h2>
+
+<pre>
+public class Ejercicio1 {
+
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= 10; i++) {
+
+            System.out.println(i);
+
+        }
+
+    }
+
+}
+</pre>
+
+</div>
+
+<div class="seccion">
+
+<h2>Errores comunes de los principiantes</h2>
+
+<ul>
+
+<li>Olvidar incrementar la variable del ciclo.</li>
+<li>Escribir incorrectamente la condición.</li>
+<li>Crear ciclos infinitos.</li>
+<li>Confundir el operador = con ==.</li>
+
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Código Fuente</h2>
+
+<p>
+En esta sección debes colocar los enlaces a los archivos Java almacenados en GitHub.
+</p>
+
+<p>
+Ejemplos:
+</p>
+
+<pre>
+codigo/CicloFor.java
+codigo/CicloWhile.java
+codigo/CicloDoWhile.java
+</pre>
+
+</div>
+
+</div>
+
+<footer>
+
+Tutorial de Programación en Java | GitHub Pages
+
+</footer>
 
 </body>
 </html>

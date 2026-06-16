@@ -1,17 +1,148 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <title>Manejo de Archivos en Java</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manejo de Archivos en Java</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f4f7fc;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+nav{
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+margin:0 15px;
+}
+
+.contenedor{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.seccion{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e40af;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+pre{
+background:#1e293b;
+color:white;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+margin:15px 0;
+}
+
+ul{
+margin-left:25px;
+line-height:1.8;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Manejo de Archivos en Java</h1>
+<header>
+
+<h1>📁 Manejo de Archivos en Java</h1>
 
 <p>
-El manejo de archivos permite guardar información de forma permanente en el computador.
+Aprende a guardar y recuperar información utilizando archivos de texto.
 </p>
 
-<h2>Escribir un archivo</h2>
+</header>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+<a href="ciclos.html">Ciclos</a>
+<a href="metodos.html">Métodos</a>
+<a href="vectores.html">Vectores y Matrices</a>
+<a href="listas.html">Listas</a>
+
+</nav>
+
+<div class="contenedor">
+
+<div class="seccion">
+
+<h2>¿Qué es el manejo de archivos?</h2>
+
+<p>
+El manejo de archivos permite almacenar información de forma permanente en el computador. Gracias a esto, los datos pueden conservarse incluso después de cerrar el programa.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>¿Para qué sirve?</h2>
+
+<ul>
+<li>Guardar información de usuarios.</li>
+<li>Registrar ventas o inventarios.</li>
+<li>Almacenar configuraciones.</li>
+<li>Leer datos previamente guardados.</li>
+</ul>
+
+</div>
+
+<div class="seccion">
+
+<h2>Escribir en un archivo</h2>
 
 <pre>
 import java.io.FileWriter;
@@ -28,16 +159,21 @@ public class EscribirArchivo {
         archivo.close();
 
     }
+
 }
 </pre>
 
 <h2>Explicación</h2>
 
 <ul>
-<li>FileWriter permite escribir en un archivo.</li>
-<li>write() escribe el contenido.</li>
+<li>FileWriter crea o abre un archivo.</li>
+<li>write() escribe información.</li>
 <li>close() guarda y cierra el archivo.</li>
 </ul>
+
+</div>
+
+<div class="seccion">
 
 <h2>Leer un archivo</h2>
 
@@ -54,24 +190,75 @@ public class LeerArchivo {
         Scanner lector = new Scanner(archivo);
 
         while(lector.hasNextLine()) {
+
             System.out.println(lector.nextLine());
+
         }
 
         lector.close();
 
     }
+
 }
 </pre>
 
-<h2>Conceptos importantes</h2>
+<h2>Explicación</h2>
 
 <ul>
+<li>File representa el archivo.</li>
 <li>Scanner permite leer información.</li>
-<li>hasNextLine() verifica si quedan líneas por leer.</li>
+<li>hasNextLine() verifica si existen más líneas.</li>
 <li>nextLine() obtiene la siguiente línea.</li>
 </ul>
 
-<a href="index.html">Volver al inicio</a>
+</div>
+
+<div class="seccion">
+
+<h2>Ejercicio Propuesto</h2>
+
+<p>
+Crear un archivo llamado estudiantes.txt y guardar tres nombres de estudiantes.
+</p>
+
+</div>
+
+<div class="seccion">
+
+<h2>Solución</h2>
+
+<pre>
+FileWriter archivo = new FileWriter("estudiantes.txt");
+
+archivo.write("Ana\n");
+archivo.write("Carlos\n");
+archivo.write("María\n");
+
+archivo.close();
+</pre>
+
+</div>
+
+<div class="seccion">
+
+<h2>Errores Comunes</h2>
+
+<ul>
+<li>Olvidar cerrar el archivo.</li>
+<li>No importar las librerías necesarias.</li>
+<li>Escribir mal la ruta del archivo.</li>
+<li>No manejar excepciones.</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+
+Tutorial de Programación en Java | Manejo de Archivos
+
+</footer>
 
 </body>
 </html>

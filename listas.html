@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listas en Java</title>
+</head>
+<body>
+
+<h1>Listas (ArrayList) en Java</h1>
+
+<p>
+Un ArrayList permite almacenar elementos dinámicamente. A diferencia de los arreglos, puede crecer o disminuir de tamaño.
+</p>
+
+<h2>Ejemplo</h2>
+
+<pre>
+import java.util.ArrayList;
+
+public class Lista {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> nombres = new ArrayList<>();
+
+        nombres.add("Ana");
+        nombres.add("Luis");
+        nombres.add("Carlos");
+
+        System.out.println(nombres);
+
+    }
+}
+</pre>
+
+<h2>Explicación</h2>
+
+<ul>
+<li>ArrayList es una colección dinámica.</li>
+<li>add() agrega elementos.</li>
+<li>String indica que la lista almacenará texto.</li>
+<li>No es necesario definir el tamaño al crearla.</li>
+</ul>
+
+<h2>Salida</h2>
+
+<pre>
+[Ana, Luis, Carlos]
+</pre>
+
+<a href="index.html">Volver al inicio</a>
+
+</body>
+</html>

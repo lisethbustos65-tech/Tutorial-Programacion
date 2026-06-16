@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,87 +7,139 @@
 <title>Manejo de Archivos en Java</title>
 
 <style>
+:root{
+    --primary:#1e3a8a;
+    --secondary:#2563eb;
+    --bg:#f4f7fc;
+    --text:#1f2937;
+    --card:#ffffff;
+}
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
 }
 
 body{
-background:#f4f7fc;
-color:#333;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
 }
 
+/* HEADER */
 header{
-background:linear-gradient(135deg,#2563eb,#1e3a8a);
-color:white;
-text-align:center;
-padding:60px 20px;
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    color:white;
+    text-align:center;
+    padding:70px 20px;
 }
 
+header h1{
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+header p{
+    opacity:0.9;
+    font-size:1.1rem;
+}
+
+/* NAV */
 nav{
-background:white;
-padding:15px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+    flex-wrap:wrap;
 }
 
 nav a{
-text-decoration:none;
-color:#2563eb;
-font-weight:bold;
-margin:0 15px;
+    text-decoration:none;
+    color:var(--secondary);
+    font-weight:600;
+    transition:0.3s;
 }
 
-.contenedor{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:40px 0;
+nav a:hover{
+    color:var(--primary);
 }
 
-.seccion{
-background:white;
-padding:30px;
-border-radius:15px;
-margin-bottom:25px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
 }
 
+/* CARDS */
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* TITLES */
 h2{
-color:#1e40af;
-margin-bottom:15px;
+    color:var(--primary);
+    margin-bottom:15px;
 }
 
-p{
-line-height:1.8;
-margin-bottom:15px;
-}
-
+/* CODE */
 pre{
-background:#1e293b;
-color:white;
-padding:20px;
-border-radius:10px;
-overflow:auto;
-margin:15px 0;
+    background:#0f172a;
+    color:#e5e7eb;
+    padding:18px;
+    border-radius:10px;
+    overflow:auto;
+    margin-top:15px;
 }
 
+/* LIST */
 ul{
-margin-left:25px;
-line-height:1.8;
+    margin-left:20px;
+    margin-top:10px;
 }
 
+/* FOOTER */
 footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
 }
 
+/* BUTTON LINKS */
+a.repo{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 15px;
+    background:var(--secondary);
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+a.repo:hover{
+    background:var(--primary);
+}
 </style>
 
 </head>
@@ -96,53 +147,40 @@ margin-top:30px;
 <body>
 
 <header>
-
-<h1>📁 Manejo de Archivos en Java</h1>
-
-<p>
-Aprende a guardar y recuperar información utilizando archivos de texto.
-</p>
-
+    <h1>📁 Manejo de Archivos en Java</h1>
+    <p>Aprende a guardar, leer y manipular datos en archivos de texto de forma sencilla</p>
 </header>
 
 <nav>
-
-<a href="index.html">Inicio</a>
-<a href="ciclos.html">Ciclos</a>
-<a href="metodos.html">Métodos</a>
-<a href="vectores.html">Vectores y Matrices</a>
-<a href="listas.html">Listas</a>
-
+    <a href="index.html">Inicio</a>
+    <a href="ciclos.html">Ciclos</a>
+    <a href="metodos.html">Métodos</a>
+    <a href="vectores.html">Vectores</a>
+    <a href="listas.html">Listas</a>
 </nav>
 
-<div class="contenedor">
+<div class="container">
 
-<div class="seccion">
+    <div class="card">
+        <h2>📌 ¿Qué es el manejo de archivos?</h2>
+        <p>
+            Es la capacidad de un programa para almacenar información de forma permanente en el computador,
+            permitiendo que los datos no se pierdan al cerrar el programa.
+        </p>
+    </div>
 
-<h2>¿Qué es el manejo de archivos?</h2>
+    <div class="card">
+        <h2>🎯 ¿Para qué sirve?</h2>
+        <ul>
+            <li>Guardar usuarios o registros.</li>
+            <li>Almacenar inventarios o ventas.</li>
+            <li>Guardar configuraciones del sistema.</li>
+            <li>Leer información previamente guardada.</li>
+        </ul>
+    </div>
 
-<p>
-El manejo de archivos permite almacenar información de forma permanente en el computador. Gracias a esto, los datos pueden conservarse incluso después de cerrar el programa.
-</p>
-
-</div>
-
-<div class="seccion">
-
-<h2>¿Para qué sirve?</h2>
-
-<ul>
-<li>Guardar información de usuarios.</li>
-<li>Registrar ventas o inventarios.</li>
-<li>Almacenar configuraciones.</li>
-<li>Leer datos previamente guardados.</li>
-</ul>
-
-</div>
-
-<div class="seccion">
-
-<h2>Escribir en un archivo</h2>
+    <div class="card">
+        <h2>✍️ Escribir en un archivo</h2>
 
 <pre>
 import java.io.FileWriter;
@@ -157,25 +195,20 @@ public class EscribirArchivo {
         archivo.write("Hola Mundo");
 
         archivo.close();
-
     }
-
 }
 </pre>
 
-<h2>Explicación</h2>
+        <p><strong>Explicación:</strong></p>
+        <ul>
+            <li><b>FileWriter:</b> crea o abre un archivo.</li>
+            <li><b>write():</b> escribe datos dentro del archivo.</li>
+            <li><b>close():</b> guarda y cierra correctamente.</li>
+        </ul>
+    </div>
 
-<ul>
-<li>FileWriter crea o abre un archivo.</li>
-<li>write() escribe información.</li>
-<li>close() guarda y cierra el archivo.</li>
-</ul>
-
-</div>
-
-<div class="seccion">
-
-<h2>Leer un archivo</h2>
+    <div class="card">
+        <h2>📖 Leer un archivo</h2>
 
 <pre>
 import java.io.File;
@@ -190,42 +223,24 @@ public class LeerArchivo {
         Scanner lector = new Scanner(archivo);
 
         while(lector.hasNextLine()) {
-
             System.out.println(lector.nextLine());
-
         }
 
         lector.close();
-
     }
-
 }
 </pre>
+    </div>
 
-<h2>Explicación</h2>
+    <div class="card">
+        <h2>🧠 Ejercicio Propuesto</h2>
+        <p>
+            Crea un archivo llamado <b>estudiantes.txt</b> y guarda tres nombres.
+        </p>
+    </div>
 
-<ul>
-<li>File representa el archivo.</li>
-<li>Scanner permite leer información.</li>
-<li>hasNextLine() verifica si existen más líneas.</li>
-<li>nextLine() obtiene la siguiente línea.</li>
-</ul>
-
-</div>
-
-<div class="seccion">
-
-<h2>Ejercicio Propuesto</h2>
-
-<p>
-Crear un archivo llamado estudiantes.txt y guardar tres nombres de estudiantes.
-</p>
-
-</div>
-
-<div class="seccion">
-
-<h2>Solución</h2>
+    <div class="card">
+        <h2>✅ Solución</h2>
 
 <pre>
 FileWriter archivo = new FileWriter("estudiantes.txt");
@@ -236,28 +251,33 @@ archivo.write("María\n");
 
 archivo.close();
 </pre>
+    </div>
 
-</div>
+    <div class="card">
+        <h2>⚠️ Errores comunes</h2>
+        <ul>
+            <li>No cerrar el archivo.</li>
+            <li>No importar librerías.</li>
+            <li>Ruta incorrecta del archivo.</li>
+            <li>No manejar excepciones.</li>
+        </ul>
+    </div>
 
-<div class="seccion">
+    <div class="card">
+        <h2>🔗 Código en GitHub</h2>
+        <p>
+            Aquí debes enlazar tu repositorio con los archivos Java del proyecto:
+        </p>
 
-<h2>Errores Comunes</h2>
-
-<ul>
-<li>Olvidar cerrar el archivo.</li>
-<li>No importar las librerías necesarias.</li>
-<li>Escribir mal la ruta del archivo.</li>
-<li>No manejar excepciones.</li>
-</ul>
-
-</div>
+        <a class="repo" href="https://github.com/" target="_blank">
+            Ver repositorio en GitHub
+        </a>
+    </div>
 
 </div>
 
 <footer>
-
-Tutorial de Programación en Java | Manejo de Archivos
-
+    Tutorial de Programación en Java | Manejo de Archivos © 2026
 </footer>
 
 </body>
